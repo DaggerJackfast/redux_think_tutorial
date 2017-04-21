@@ -7,14 +7,14 @@ export function itemsHasErrored(bool) {
 
 export function itemsIsLoading(bool) {
     return{
-        type:'ITEM_IS_LOADING',
+        type:'ITEMS_IS_LOADING',
         isLoading:bool
     };
 }
 
-export function itemFetchDataSuccess(items) {
+export function itemsFetchDataSuccess(items) {
     return{
-        type:'ITEM_FETCH_DATA_SUCCESS',
+        type:'ITEMS_FETCH_DATA_SUCCESS',
         items
     };
 }
@@ -37,7 +37,7 @@ export function itemsFetchData(url) {
             dispatch(itemsIsLoading(false));
             return response;
         }).then((response) => response.json())
-            .then((items) => dispatch(itemFetchDataSuccess(items)))
+            .then((items) => dispatch(itemsFetchDataSuccess(items)))
             .catch(() => dispatch(itemsHasErrored(true)))
     }
 }

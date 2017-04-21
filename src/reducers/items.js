@@ -9,7 +9,7 @@ export function itemsHasErrored(state=false,action){
 
 export function itemsIsLoading(state=false,action) {
     switch (action.type){
-        case 'ITEM_IS_LOADING':
+        case 'ITEMS_IS_LOADING':
             return action.isLoading;
         default:
             return state;
@@ -18,7 +18,7 @@ export function itemsIsLoading(state=false,action) {
 
 export function items(state=[],action) {
     switch (action.type){
-        case 'ITEM_FETCH_DATA_SUCCESS':
+        case 'ITEMS_FETCH_DATA_SUCCESS':
             return action.items;
         default:
             return state;
